@@ -67,3 +67,15 @@ cd My-Terminal-Setup
 
 
 That’s it. Your terminal is back.
+
+---
+
+## 🔄 Reverting to Default
+
+To undo all changes and restore your terminal to default:
+
+***(Assuming You are in /My-Terminal_setup/)***
+
+cd Revert-Changes
+Set-ExecutionPolicy Bypass -Scope Process -Force
+.\Revert-Terminal.ps1
