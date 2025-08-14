@@ -53,7 +53,11 @@ Theme auto-load on start
 
 This setup uses a modified Nord theme from Oh My Posh, customized to match a clean dark aesthetic with clear powerline glyphs and icons.
 
-👤 Theme Credit: Jan De Dobbeleer – Creator of Oh My Posh
+👤 Theme Credit:
+(the actual theme is not mine, but i rather made a automated script for it)
+AntonRyadovoy/Powershell-nord-theme : https://github.com/AntonRyadovoy/Powershell-nord-theme.git 
+
+Jan De Dobbeleer – Creator of Oh My Posh
 
 📸 Preview
 
@@ -79,3 +83,5 @@ To undo all changes and restore your terminal to default:
 cd Revert-Changes
 Set-ExecutionPolicy Bypass -Scope Process -Force
 .\Revert-Terminal.ps1
+
+
