@@ -55,7 +55,7 @@
 
 ## 🚀 **Quick Installation**
 
-### **Method 1: One-Line Install (Recommended)**
+### **Method 1: One-Line Install (Not working use Manual)**
 ```powershell
 iwr -useb "https://raw.githubusercontent.com/Nick-Zoc/My-Terminal-Setup/main/Terminal-Manager.ps1" | iex
 ```
