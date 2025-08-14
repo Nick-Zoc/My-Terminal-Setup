@@ -55,25 +55,21 @@
 
 ## 🚀 **Quick Installation**
 
-### **Method 1: One-Line Install (Not working use Manual)**
+### **Method 1: Git Clone (Easy, Recomended)**
 ```powershell
-iwr -useb "https://raw.githubusercontent.com/Nick-Zoc/My-Terminal-Setup/main/Terminal-Manager.ps1" | iex
-```
+# ****  Run the Command one by one.  ****
 
-### **Method 2: Manual Installation**
-```powershell
-# Clone the repository
 git clone https://github.com/Nick-Zoc/My-Terminal-Setup.git
+
 cd My-Terminal-Setup
 
-# Run the PowerShell Theme Manager
 .\Terminal-Manager.ps1
 ```
 
-### **Method 3: Download ZIP**
+### **Method 1: Download ZIP**
 1. Download the [latest release](https://github.com/Nick-Zoc/My-Terminal-Setup/archive/refs/heads/main.zip)
 2. Extract to your desired location
-3. Run `Terminal-Manager.ps1`
+3. Run `Terminal-Manager.ps1` as ADMIN
 
 ---
 
@@ -166,21 +162,9 @@ My-Terminal-Setup/
 
 ### **Step 1: Choose Your Installation Method**
 
-<details>
-<summary><strong>🚀 Method 1: One-Line Install (Easiest)</strong></summary>
-
-1. **Open PowerShell as Administrator**
-2. **Run the one-liner:**
-   ```powershell
-   iwr -useb "https://raw.githubusercontent.com/Nick-Zoc/My-Terminal-Setup/main/Terminal-Manager.ps1" | iex
-   ```
-3. **Follow the on-screen menu**
-4. **Restart your terminal** when complete
-
-</details>
 
 <details>
-<summary><strong>📦 Method 2: Git Clone (For Developers)</strong></summary>
+<summary><strong>📦 Method 1: Git Clone (For Developers)</strong></summary>
 
 1. **Open PowerShell/Terminal**
 2. **Clone the repository:**
@@ -197,7 +181,7 @@ My-Terminal-Setup/
 </details>
 
 <details>
-<summary><strong>📁 Method 3: Manual Download</strong></summary>
+<summary><strong>📁 Method 2: Manual Download</strong></summary>
 
 1. **Download** the [ZIP file](https://github.com/Nick-Zoc/My-Terminal-Setup/archive/refs/heads/main.zip)
 2. **Extract** to `C:\PowerShellTheme\` (or your preferred location)
@@ -366,6 +350,8 @@ cd My-Terminal-Setup
 <td width="50%">
 
 ### **🎨 Themes & Design**
+(the actual theme is not mine, but i rather made a automated script for it)
+- **AntonRyadovoy/Powershell-nord-theme**: https://github.com/AntonRyadovoy/Powershell-nord-theme.git 
 - **[Oh My Posh](https://ohmyposh.dev/)** - Prompt theme engine
 - **[Nord Theme](https://www.nordtheme.com/)** - Beautiful color palette
 - **[Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts)** - Programming font with icons
@@ -384,7 +370,6 @@ cd My-Terminal-Setup
 
 ### **👨‍💻 Created with ❤️ by**
 - **Nick Zoc** - *Lead Developer & Designer*
-- **AI Assistant** - *Code optimization & documentation*
 
 ---
 
