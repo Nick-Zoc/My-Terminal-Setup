@@ -16,10 +16,8 @@ if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
 
 # Custom PowerShell aliases
 Set-Alias ll Get-ChildItem
-Set-Alias la "Get-ChildItem -Force"
 # ".." is a directory, not a valid alias - use a function instead:
 function .. { Set-Location .. }
-function la { Get-ChildItem -Force }
 
 # Only set alias if not already defined
 if (-not (Test-Path alias:grep)) { Set-Alias grep Select-String }
