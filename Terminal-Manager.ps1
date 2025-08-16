@@ -8,26 +8,26 @@ Clear-Host
 Write-Host ""
 Write-Host "    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||" -ForegroundColor Cyan
 Write-Host "    ||                                                                                                ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############                         /#\                       ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############                        /###\                      ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############                       /#####\                     ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############                      /#######\                    ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############                     /#########\                   ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############                    /##=,_\#####\                  ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############                   /#############\                 ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############                  /###############\                ||  " -ForegroundColor Cyan
-Write-Host "    ||                                                              /#################\               ||  " -ForegroundColor Cyan
-Write-Host "    ||                                                             /###################\              ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############               /######*\#\#\#\#\#####\             ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############              /#######/       \#######\            ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############             /########         ########\           ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############            /#########         #########\          ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############           /##########         ##########\         ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############          /######***             ***######\        ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############         /###**                       **###\       ||  " -ForegroundColor Cyan
-Write-Host "    ||     ###############          ###############        /**                              **\\      ||   " -ForegroundColor Cyan
+Write-Host "    ||                                                                /#\                             ||  " -ForegroundColor Cyan
+Write-Host "    ||                                                               /###\                            ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############                       /#####\                           ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############                      /#######\                          ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############                     /#########\                         ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############                    /##=,_\#####\                        ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############                   /#############\                       ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############                  /###############\                      ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############                 /#################\                     ||  " -ForegroundColor Cyan
+Write-Host "    ||                                                       /###################\                    ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############               /######*\#\#\#\#\#####\                   ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############              /#######/       \#######\                  ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############             /########         ########\                 ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############            /#########         #########\                ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############           /##########         ##########\               ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############          /######***             ***######\              ||  " -ForegroundColor Cyan
+Write-Host "    ||     ###############    ###############         /###**                       **###\             ||  " -ForegroundColor Cyan
+Write-Host "    ||                                               /**                              **\\            ||  " -ForegroundColor Cyan
 Write-Host "    ||                                                                                                ||" -ForegroundColor Cyan
-Write-Host "    ||                                                                 I use ARCH btw.                ||" -ForegroundColor Green
+Write-Host "    ||                                                           I use ARCH btw.                      ||" -ForegroundColor Green
 Write-Host "    ||                                                                                                ||" -ForegroundColor Cyan
 Write-Host "    ||                                            NICK ZOC'S                                          ||" -ForegroundColor Cyan
 Write-Host "    ||                                     POWERSHELL THEME MANAGER                                   ||" -ForegroundColor Cyan

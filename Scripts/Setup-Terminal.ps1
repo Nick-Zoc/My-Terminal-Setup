@@ -339,16 +339,16 @@ Write-Host ""
 Write-Host "    ----------------------------------------------------------------" -ForegroundColor DarkGray
 Write-Host "    |                   INSTALLED COMPONENTS                       |" -ForegroundColor DarkGray
 Write-Host "    |                                                              |" -ForegroundColor DarkGray
-Write-Host "    |  > Oh My Posh      - Powerline prompt theme engine          |" -ForegroundColor Gray
-Write-Host "    |  > Fastfetch       - Fast system info display               |" -ForegroundColor Gray
-Write-Host "    |  > Hack Nerd Font  - Programming font with icons            |" -ForegroundColor Gray
-Write-Host "    |  > Custom Theme    - Beautiful Nord prompt theme            |" -ForegroundColor Gray
-Write-Host "    |  > PowerShell Profile - Useful aliases and functions        |" -ForegroundColor Gray
+Write-Host "    |  > Oh My Posh      - Powerline prompt theme engine           |" -ForegroundColor Gray
+Write-Host "    |  > Fastfetch       - Fast system info display                |" -ForegroundColor Gray
+Write-Host "    |  > Hack Nerd Font  - Programming font with icons             |" -ForegroundColor Gray
+Write-Host "    |  > Custom Theme    - Beautiful Nord prompt theme             |" -ForegroundColor Gray
+Write-Host "    |  > PowerShell Profile - Useful aliases and functions         |" -ForegroundColor Gray
 Write-Host "    |                                                              |" -ForegroundColor DarkGray
 Write-Host "    ----------------------------------------------------------------" -ForegroundColor DarkGray
 Write-Host ""
 Write-Host "    > RESTART YOUR POWERSHELL/TERMINAL to see the amazing changes!" -ForegroundColor Yellow
 Write-Host ""
-Write-Host "    > New aliases: ll, la, .., grep, top, htop, fetch" -ForegroundColor White
+Write-Host "    > New aliases: ll, .., grep, top, htop, fetch" -ForegroundColor White
 Write-Host ""
 Write-Host "    ========================================================================" -ForegroundColor DarkGray

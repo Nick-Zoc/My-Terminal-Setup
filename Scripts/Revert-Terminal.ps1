@@ -2,15 +2,15 @@
 Clear-Host
 # Term# Cool Tech-Themed ASCII Art Header (Warning/Error Theme)
 Write-Host ""
-Write-Host "    ##############################################" -ForegroundColor Red
+Write-Host "    ##############################################" -ForegroundColor Yellow
 Write-Host "    ##                                          ##" -ForegroundColor Red
-Write-Host "    ##    !!!!!!!!!               !!!!!!!!!!    ##" -ForegroundColor Yellow
-Write-Host "    ##    !       !               ! XX  XX !    ##" -ForegroundColor Yellow
+Write-Host "    ##    !!!!!!!!!               !!!!!!!!!!    ##" -ForegroundColor Red
+Write-Host "    ##    !       !               ! XX  XX !    ##" -ForegroundColor Red
 Write-Host "    ##    ! ERROR !    WARNING    !   XX   !    ##" -ForegroundColor Red
 Write-Host "    ##    !       !               ! XX  XX !    ##" -ForegroundColor Red
-Write-Host "    ##    !!!!!!!!!               !!!!!!!!!!    ##" -ForegroundColor Yellow
-Write-Host "    ##                                          ##" -ForegroundColor Yellow
-Write-Host "    ##############################################" -ForegroundColor Magenta
+Write-Host "    ##    !!!!!!!!!               !!!!!!!!!!    ##" -ForegroundColor Red
+Write-Host "    ##                                          ##" -ForegroundColor Red
+Write-Host "    ##############################################" -ForegroundColor Yellow
 
 # Nick Zoc's Powershell Revert Script - Clean Uninstallation & Error Fixing
 # This script can either fix PowerShell profile errors or completely remove Powershell customizations
