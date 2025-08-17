@@ -18,7 +18,7 @@
 ## 📸 **Visual Preview**
 
 <!-- Screenshot: Main Terminal Interface showing Oh My Posh theme with Nord colors -->
-![Main Terminal Interface](https://github.com/user-attachments/assets/85edfe9d-e53f-4922-9838-04458ed6cc1e)
+![Main Terminal Interface](https://github.com/user-attachments/assets/64d22454-9d84-4578-8651-c81aba94044a)
 *PowerShell terminal with Oh My Posh Nord theme, custom prompt, and enhanced features*
 
 <!-- Screenshot: Terminal Manager Interface showing all three options -->
