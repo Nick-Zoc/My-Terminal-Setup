@@ -1,430 +1,210 @@
-# 🚀 Nick Zoc's PowerShell Theme Manager
+# 🚀 PowerShell Theme Manager v3.0
 
 <div align="center">
 
 ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-2.0-blue.svg?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-3.0-blue.svg?style=for-the-badge)
 
-**Transform your boring PowerShell terminal into a powerful, beautiful, and productive workspace!**
+**Professional PowerShell Terminal Enhancement Suite**
 
-*The most stunning PowerShell theme setup you've ever seen* ✨
-
-</div>
-
----
-
-## 📸 **Screenshots**
-
-<div align="center">
-
-![PowerShell Theme Preview](preview.png)
-*Beautiful PowerShell terminal with Oh My Posh, Nord theme, and custom prompt*
+*Complete terminal transformation with advanced features, modern aesthetics, and productivity tools*
 
 </div>
 
 ---
 
-## 🌟 **What Makes This Special**
+## 📸 **Visual Preview**
 
-<table>
-<tr>
-<td width="50%">
+<!-- Screenshot: Main Terminal Interface showing Oh My Posh theme with Nord colors -->
+![Main Terminal Interface](https://github.com/user-attachments/assets/85edfe9d-e53f-4922-9838-04458ed6cc1e)
+*PowerShell terminal with Oh My Posh Nord theme, custom prompt, and enhanced features*
 
-### 🎨 **Beautiful Aesthetics**
-- **Nord Color Scheme** - Professional blue/teal palette
-- **Oh My Posh Integration** - Powerline prompts with git status
-- **Hack Nerd Font** - Programming icons and symbols
-- **Custom ASCII Art** - Hacker-style animations
+<!-- Screenshot: Terminal Manager Interface showing all three options -->
+![Terminal Manager Interface](https://github.com/user-attachments/assets/998f5aa9-f439-4f74-9955-f1d386e52cde)
+*Terminal Manager main interface with setup, fix, and removal options*
 
-</td>
-<td width="50%">
-
-### ⚡ **Productivity Boost**
-- **Smart Aliases** - `ll`, `grep`, `top`, `htop`, `fetch`
-- **Fastfetch Integration** - Beautiful system information
-- **Git Integration** - Branch status in prompt
-- **Error-Safe Setup** - No breaking changes
-
-</td>
-</tr>
-</table>
-
----
-
-## 🚀 **Quick Installation**
-
-### **Method 1: Git Clone (Easy, Recomended)**
-```powershell
-# ****  Run the Command one by one.  ****
-
-git clone https://github.com/Nick-Zoc/My-Terminal-Setup.git
-
-cd My-Terminal-Setup
-
-.\Terminal-Manager.ps1
-```
-
-### **Method 1: Download ZIP**
-1. Download the [latest release](https://github.com/Nick-Zoc/My-Terminal-Setup/archive/refs/heads/main.zip)
-2. Extract to your desired location
-3. Run `Terminal-Manager.ps1` as ADMIN
-
----
-
-## 🎯 **Features Overview**
-
-| Component | Description | Status |
-|-----------|-------------|--------|
-| **Oh My Posh** | Powerline prompt with themes | ✅ Auto-Install |
-| **Fastfetch** | System information display | ✅ Auto-Install |
-| **Hack Nerd Font** | Programming font with icons | ✅ Auto-Install |
-| **Nord Theme** | Custom beautiful color scheme | ✅ Included |
-| **PowerShell Profile** | Aliases and productivity functions | ✅ Configured |
-| **Git Integration** | Branch status and git aliases | ✅ Built-in |
-
----
-
-## 🛠️ **PowerShell Theme Manager Options**
-
-<div align="center">
-
-```
-🎮 Choose your action:
-┌─────────────────────────────────────────────────────────────┐
-│  1. Install PowerShell Setup (Full Installation)           │
-│     - Oh My Posh, Fastfetch, Hack Nerd Font                │
-│     - Custom Nord theme & PowerShell profile               │
-│     - Beautiful animated installation                      │
-│                                                             │
-│  2. Fix Profile Errors (Recommended for errors)            │
-│     - Fixes 'command not found' errors                     │
-│     - Keeps all customizations intact                      │
-│     - Quick and safe solution                              │
-│                                                             │
-│  3. Complete Removal (Nuclear option)                      │
-│     - Removes all terminal customizations                  │
-│     - Uninstalls Oh My Posh, Fastfetch, etc.              │
-│     - Returns to default PowerShell                        │
-└─────────────────────────────────────────────────────────────┘
-```
-
-</div>
-
----
-
-## 📁 **Project Structure**
-
-```
-My-Terminal-Setup/
-├── 📄 README.md                    # This comprehensive guide
-├── 🚀 Terminal-Manager.ps1         # Main PowerShell Theme Manager
-├── 📂 Config/                      # Configuration files
-│   ├── 📄 Microsoft.PowerShell_profile.ps1  # Custom PowerShell profile
-│   └── 🎨 nordcustom.omp.json     # Beautiful Nord theme
-├── 📂 Scripts/                     # Core installation scripts
-│   ├── ⚙️ Setup-Terminal.ps1       # Full installation script
-│   └── 🗑️ Revert-Terminal.ps1      # Uninstallation script
-└── 📂 One-Line-Setups/            # Quick installation options
-    ├── 📥 install.ps1              # Direct install script
-    └── 🔧 revert.ps1               # Direct fix script
-```
+<!-- Screenshot: Installation Progress with Dynamic Status -->
+![Installation Progress](https://github.com/user-attachments/assets/c6ce0a53-85e7-4d49-9448-b1ffa1581e1e)
+*Dynamic installation progress with real-time status updates and color-coded messages*
 
 ---
 
 ## 💻 **System Requirements**
 
-<table>
-<tr>
-<td width="50%">
+### **Operating System**
+- **Windows 10** (basic features, no acrylic blur)
+- **Windows 11** (full feature support including acrylic blur effects)
 
-### **Required**
-- ✅ **Windows 10/11** (PowerShell 5.1+)
-- ✅ **Internet Connection** (for initial setup)
-- ✅ **Administrator Rights** (for font installation)
+### **PowerShell**
+- **Primary Target**: PowerShell 5.1 (built-in Windows PowerShell)
+- **⚠️ PowerShell 7+**: May work but **not extensively tested** - install separately in PowerShell 7+ window
+- **Note**: Script automatically detects PowerShell version and adapts accordingly
 
-</td>
-<td width="50%">
-
-### **Recommended**
-- 🎯 **Windows Terminal** or **PowerShell 7+**
-- 🎯 **Git for Windows** (auto-installed)
-- 🎯 **Winget Package Manager** (built into Windows 11)
-
-</td>
-</tr>
-</table>
+### **Dependencies**
+- **Winget Package Manager** (Windows 10 1709+ / Windows 11)
+- **Internet Connection** (for initial component downloads)
+- **Administrator Privileges** (for system-wide font installation)
 
 ---
 
-## 🔧 **Detailed Installation Guide**
+## 🚀 **Installation Methods**
 
-### **Step 1: Choose Your Installation Method**
+### **Method 1: One-Line Installation** ⚡ (Recommended)
+```powershell
+iwr -useb "https://raw.githubusercontent.com/Nick-Zoc/My-Terminal-Setup/main/One-Line-Setups/install.ps1" | iex
+```
 
+### **Method 2: Git Clone Installation** 🔄
+```powershell
+git clone https://github.com/Nick-Zoc/My-Terminal-Setup.git
+cd My-Terminal-Setup
+.\Terminal-Manager.ps1
+```
 
-<details>
-<summary><strong>📦 Method 1: Git Clone (For Developers)</strong></summary>
+### **Method 3: Manual Download & Run** 📁
+1. Download from [GitHub Repository](https://github.com/Nick-Zoc/My-Terminal-Setup)
+2. Extract ZIP and run `Terminal-Manager.ps1`
 
-1. **Open PowerShell/Terminal**
-2. **Clone the repository:**
-   ```powershell
-   git clone https://github.com/Nick-Zoc/My-Terminal-Setup.git
-   cd My-Terminal-Setup
-   ```
-3. **Run the manager:**
-   ```powershell
-   .\Terminal-Manager.ps1
-   ```
-4. **Select option 1** for full installation
+---
 
-</details>
+## 🎯 **Core Features**
 
-<details>
-<summary><strong>📁 Method 2: Manual Download</strong></summary>
+| Component | Description | Status |
+|-----------|-------------|--------|
+| **Oh My Posh** | Powerline prompt with Git integration | ✅ Auto-Install |
+| **Fastfetch** | System information display | ✅ Auto-Install |
+| **ntop** | Process monitoring (top/htop aliases) | ✅ Auto-Install |
+| **PSReadLine** | Advanced autocomplete & suggestions | ✅ Auto-Install |
+| **Hack Nerd Font** | Programming font with icons | ✅ Auto-Install |
+| **Windows Terminal** | Transparency & font configuration | ✅ Auto-Install |
 
-1. **Download** the [ZIP file](https://github.com/Nick-Zoc/My-Terminal-Setup/archive/refs/heads/main.zip)
-2. **Extract** to `C:\PowerShellTheme\` (or your preferred location)
-3. **Open PowerShell** and navigate to the folder
-4. **Run:** `.\Terminal-Manager.ps1`
+### **⚠️ PowerShell 7+ Compatibility Note**
+Most features are designed for PowerShell 5.1. While the script may work in PowerShell 7+, it has not been extensively tested and some features may not function as expected.
 
-</details>
+---
 
-### **Step 2: Installation Process**
+## 🎮 **Terminal Manager Options**
 
-The installer will automatically:
+```
+┌─────────────────────────────────────────────────────────────┐
+│  1. Install PowerShell Setup (Full Installation)           │
+│     - Oh My Posh, Fastfetch, ntop, PSReadLine, Hack Font   │
+│     - Nord theme & PowerShell profile                      │
+│                                                             │
+│  2. Fix Profile Errors (Quick Fix)                         │
+│     - Fixes 'command not found' errors                     │
+│     - Keeps customizations intact                          │
+│                                                             │
+│  3. Complete Removal                                        │
+│     - Removes all customizations                           │
+│     - Returns to default PowerShell                        │
+└─────────────────────────────────────────────────────────────┘
+```
 
-1. **🔍 Check System Requirements** - Verifies Windows version and permissions
-2. **📦 Install Components** - Oh My Posh, Fastfetch, Hack Nerd Font
-3. **🎨 Apply Theme** - Nord color scheme and custom prompt
-4. **⚙️ Configure Profile** - Aliases and productivity functions
-5. **✅ Verify Installation** - Ensures everything works correctly
+---
+
+## 🔧 **Component Details**
+
+### **Oh My Posh**
+Modern prompt theme engine with Git integration  
+*Credit: [Jan De Dobbeleer](https://github.com/JanDeDobbeleer/oh-my-posh)*
+
+### **Fastfetch**
+Cross-platform system information tool (triggered via `fetch` alias)
+
+### **ntop**
+Process monitoring tool (available through `top` and `htop` aliases)
+
+### **PSReadLine**
+Advanced command-line editing with InlineView autocomplete  
+**⚠️ Note**: Optimized for PowerShell 5.1, may not work properly in PowerShell 7+
+
+### **Windows Terminal Integration**
+Background transparency (30%), acrylic blur effects (Windows 11 only), custom fonts
+
+### **Hack Nerd Font**
+Programming-focused font with 3,000+ icons and programming ligatures
+
+---
+
+## 🛠️ **Custom Aliases**
+
+| Alias | Command | Description |
+|-------|---------|-------------|
+| `ll` | `Get-ChildItem -Force` | List all files including hidden |
+| `..` | `cd ..` | Navigate to parent directory |
+| `grep` | `Select-String` | Search text patterns in files |
+| `top` | `ntop` | Process monitoring (requires ntop) |
+| `htop` | `ntop` | Alternative process monitor |
+| `fetch` | `fastfetch` | Display system information |
 
 ---
 
 ## 🛠️ **Troubleshooting**
 
-### **Common Issues & Solutions**
+### **Common Issues**
 
-<details>
-<summary><strong>❌ "Command not found" errors</strong></summary>
+**"Command not found" errors**
+- Solution: Run Terminal Manager → Option 2 (Fix Profile Errors)
 
-**Solution:** Run the PowerShell Theme Manager and select **Option 2 (Fix Profile Errors)**
+**Windows Terminal transparency not working**
+- Cause: Feature requires Windows 11 for acrylic blur effects
+
+**Font not displaying correctly**
+- Solution: Restart terminal and manually select "Hack Nerd Font Mono"
+
+**Installation fails with permission errors**
+- Solution: Run PowerShell as Administrator
+
+### **Manual Removal**
 ```powershell
-.\Terminal-Manager.ps1
-# Choose option 2
-```
-
-</details>
-
-<details>
-<summary><strong>❌ Font not displaying correctly</strong></summary>
-
-**Solution:** 
-1. Install Hack Nerd Font manually from [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
-2. Set your terminal font to "Hack Nerd Font"
-3. Restart your terminal
-
-</details>
-
-<details>
-<summary><strong>❌ Oh My Posh not working</strong></summary>
-
-**Solution:** 
-```powershell
-# Reinstall Oh My Posh
-winget install JanDeDobbeleer.OhMyPosh
-# Reload your profile
-& $PROFILE
-```
-
-</details>
-
-<details>
-<summary><strong>❌ Colors look wrong</strong></summary>
-
-**Solution:** 
-1. Make sure you're using **Windows Terminal** or **PowerShell 7+**
-2. Enable **true color support** in your terminal settings
-3. Apply a dark theme to your terminal
-
-</details>
-
----
-
-## 🗑️ **Uninstallation Guide**
-
-### **Complete Removal**
-```powershell
-# Method 1: Using the manager
-.\Terminal-Manager.ps1
-# Choose option 3
-
-# Method 2: Manual cleanup
-Remove-Item $PROFILE -Force  # Removes custom profile
-winget uninstall JanDeDobbeleer.OhMyPosh  # Removes Oh My Posh
-winget uninstall fastfetch  # Removes Fastfetch
-```
-
-### **Partial Removal (Keep some components)**
-The PowerShell Theme Manager allows you to selectively remove components during the uninstallation process.
-
----
-
-## 🎨 **Customization**
-
-### **Available Aliases**
-| Alias | Command | Description |
-|-------|---------|-------------|
-| `ll` | `Get-ChildItem -Force` | List all files (including hidden) |
-| `..` | `cd ..` | Go up one directory |
-| `grep` | `Select-String` | Search text in files |
-| `top` | `Get-Process \| Sort-Object CPU -Desc` | Show top processes |
-| `htop` | `Get-Process \| Sort-Object CPU -Desc` | Same as `top` |
-| `fetch` | `fastfetch` | Show system information |
-
-### **Modifying the Theme**
-1. **Edit the theme file:** `Config/nordcustom.omp.json`
-2. **Reload your profile:** `. $PROFILE`
-3. **Or create your own theme** using [Oh My Posh documentation](https://ohmyposh.dev/)
-
-### **Adding Custom Aliases**
-Edit your PowerShell profile:
-```powershell
-notepad $PROFILE
-# Add your custom functions and aliases
+winget uninstall JanDeDobbeleer.OhMyPosh
+winget uninstall fastfetch
+winget uninstall ntop
+winget uninstall SourceFoundry.HackFonts
+Remove-Item $PROFILE -Force
 ```
 
 ---
 
-## 🤝 **Contributing**
+## 📝 **Credits & Acknowledgments**
 
-We welcome contributions! Here's how you can help:
-
-<table>
-<tr>
-<td width="50%">
-
-### **🐛 Bug Reports**
-- Use GitHub Issues
-- Include system information
-- Provide error messages
-- Steps to reproduce
-
-</td>
-<td width="50%">
-
-### **🚀 Feature Requests**
-- Open a GitHub Issue
-- Describe the feature
-- Explain why it's useful
-- Consider implementation
-
-</td>
-</tr>
-</table>
-
-### **Development Setup**
-```powershell
-# Fork and clone the repository
-git clone https://github.com/your-username/My-Terminal-Setup.git
-cd My-Terminal-Setup
-
-# Make your changes
-# Test thoroughly
-# Submit a pull request
-```
-
----
-
-## 🙏 **Credits & Acknowledgments**
-
-<div align="center">
-
-### **Special Thanks**
-
-</div>
-
-<table>
-<tr>
-<td width="50%">
-
-### **🎨 Themes & Design**
-(the actual theme is not mine, but i rather made a automated script for it)
-- **AntonRyadovoy/Powershell-nord-theme**: https://github.com/AntonRyadovoy/Powershell-nord-theme.git 
-- **[Oh My Posh](https://ohmyposh.dev/)** - Prompt theme engine
-- **[Nord Theme](https://www.nordtheme.com/)** - Beautiful color palette
-- **[Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts)** - Programming font with icons
-
-</td>
-<td width="50%">
-
-### **🛠️ Tools & Utilities**
+### **Theme & Tools**
+- **[Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh)** by [Jan De Dobbeleer](https://github.com/JanDeDobbeleer)
+- **[Nord Theme](https://github.com/nordtheme)** by [AntonRyadovoy](https://github.com/AntonRyadovoy/Powershell-nord-theme)
 - **[Fastfetch](https://github.com/fastfetch-cli/fastfetch)** - System information tool
-- **[PowerShell Community](https://github.com/PowerShell/PowerShell)** - Amazing shell platform
+- **[ntop](https://github.com/gsauthof/ntop)** - Process monitoring utility
+- **[Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts)** by [Ryan L McIntyre](https://github.com/ryanoasis)
+- **[PowerShell Team](https://github.com/PowerShell/PowerShell)** - PowerShell platform
 - **[Windows Terminal Team](https://github.com/microsoft/terminal)** - Modern terminal application
-
-</td>
-</tr>
-</table>
-
-### **👨‍💻 Created with ❤️ by**
-- **Nick Zoc** - *Lead Developer & Designer*
 
 ---
 
 ## 📄 **License**
 
-<div align="center">
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**MIT License** - Feel free to use, modify, and distribute!
-
-See the [LICENSE](LICENSE) file for details.
-
-</div>
+**Third-Party Licenses**: All integrated tools retain their respective licenses.
 
 ---
 
-## 📊 **Project Stats**
+## 🔄 **Version Information**
 
-<div align="center">
+**Current Version**: 3.0.0  
+**Release Date**: August 17 2025  
+**Compatibility**: PowerShell 5.1+ (⚠️ PowerShell 7+ not extensively tested)  
+**Status**: Stable Release
 
-![GitHub Stars](https://img.shields.io/github/stars/Nick-Zoc/My-Terminal-Setup?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/Nick-Zoc/My-Terminal-Setup?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/Nick-Zoc/My-Terminal-Setup)
-![GitHub License](https://img.shields.io/github/license/Nick-Zoc/My-Terminal-Setup)
-
-**If this project helped you, please consider giving it a ⭐!**
-
-</div>
-
----
-
-## 🚀 **What's Next?**
-
-- [ ] **PowerShell 7+ Core Support** - Cross-platform compatibility
-- [ ] **More Themes** - Additional color schemes and styles  
-- [ ] **Plugin System** - Modular extensions and add-ons
-- [ ] **Auto-Updates** - Keep your setup fresh automatically
-- [ ] **Configuration GUI** - Easy visual customization
-- [ ] **Profile Sync** - Backup and restore settings
+For detailed changelog, see [release.md](release.md)
 
 ---
 
 <div align="center">
 
-### **Ready to transform your PowerShell experience?**
+**Transform your PowerShell experience today!**
 
-```powershell
-iwr -useb "https://raw.githubusercontent.com/Nick-Zoc/My-Terminal-Setup/main/Terminal-Manager.ps1" | iex
-```
-
-**Join thousands of developers who've already upgraded their terminals! 🚀**
-
----
-
-*Made with ❤️ for the PowerShell community*
+[🚀 One-Line Install](https://raw.githubusercontent.com/Nick-Zoc/My-Terminal-Setup/main/One-Line-Setups/install.ps1) | [📁 Download](https://github.com/Nick-Zoc/My-Terminal-Setup/archive/refs/heads/main.zip) | [🔄 Git Clone](https://github.com/Nick-Zoc/My-Terminal-Setup.git)
 
 </div>
-
-

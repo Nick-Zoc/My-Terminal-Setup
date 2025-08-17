@@ -17,7 +17,7 @@ Write-Host "    ##############################################" -ForegroundColor
 
 Write-Host "    ========================================================================" -ForegroundColor Red
 Write-Host "    |                           REVERT TOOL                                |" -ForegroundColor Red
-Write-Host "    |                     FIX ERRORS OR CLEAN RESET                        |" -ForegroundColor Cyan
+Write-Host "    |                     FIX ERRORS OR CLEAN RESET                        |" -ForegroundColor Yellow
 Write-Host "    ========================================================================" -ForegroundColor Red
 Write-Host ""
 Write-Host "    This tool can help you:" -ForegroundColor White
@@ -31,7 +31,7 @@ Write-Host "    |     - Safe and quick solution                                |
 Write-Host "    |                                                              |" -ForegroundColor DarkGray
 Write-Host "    |  2. Complete Powershell Theme Reset                          |" -ForegroundColor Yellow
 Write-Host "    |     - Removes all customizations                             |" -ForegroundColor Gray
-Write-Host "    |     - Uninstalls Oh My Posh, Fastfetch, etc.                 |" -ForegroundColor Gray
+Write-Host "    |     - Uninstalls Oh My Posh, Fastfetch, ntop, etc.           |" -ForegroundColor Gray
 Write-Host "    |     - Returns to default PowerShell                          |" -ForegroundColor Gray
 Write-Host "    |                                                              |" -ForegroundColor DarkGray
 Write-Host "    ----------------------------------------------------------------" -ForegroundColor DarkGray
@@ -53,7 +53,7 @@ function Show-RevertProgress {
     
     for ($i = 0; $i -lt $iterations; $i++) {
         $char = $chars[$i % 4]
-        Write-Host "    |   [$char] Working..." -ForegroundColor Magenta -NoNewline
+        Write-Host "    |   [$char] Working..." -ForegroundColor cyan -NoNewline
         Write-Host "`r" -NoNewline
         Start-Sleep -Milliseconds 100
     }
@@ -142,31 +142,46 @@ Write-Host ""
 Show-RevertProgress "Preparing removal sequence" 1000
 Show-RevertProgress "Scanning installed components" 1500
 
-# Function to ask for confirmation
+# Function to ask for confirmation with robust input validation
 function Ask-Confirmation {
     param($Question, $DefaultYes = $false)
-    if ($DefaultYes) {
-        $prompt = "$Question (Y/n)"
-        $default = 'Y'
-    }
-    else {
-        $prompt = "$Question (y/N)"
-        $default = 'N'
-    }
     
-    $response = Read-Host $prompt
-    if ($response -eq '') { 
-        $response = $default
+    while ($true) {
+        if ($DefaultYes) {
+            $prompt = "$Question (Y/n)"
+        }
+        else {
+            $prompt = "$Question (y/N)"
+        }
+        
+        $response = Read-Host $prompt
+        
+        # Require explicit input - no default on empty input
+        if ($response -eq '') {
+            Write-Host "   Please enter 'y' for yes or 'n' for no." -ForegroundColor Yellow
+            continue
+        }
+        
+        # Validate input
+        $response = $response.ToUpper()
+        if ($response -eq 'Y' -or $response -eq 'YES') {
+            return $true
+        }
+        elseif ($response -eq 'N' -or $response -eq 'NO') {
+            return $false
+        }
+        else {
+            Write-Host "   Invalid input. Please enter 'y' for yes or 'n' for no." -ForegroundColor Yellow
+        }
     }
-    return $response.ToUpper() -eq 'Y'
 }
 
 $itemsRemoved = 0
-$totalItems = 5
+$totalItems = 7
 
 # 1. Remove custom PowerShell profile
 Write-Host ""
-Write-Host "[1/5] PowerShell Profile" -ForegroundColor Yellow
+Write-Host "[1/7] PowerShell Profile" -ForegroundColor Yellow
 
 # Check for profile in multiple possible locations
 $profileLocations = @(
@@ -217,7 +232,7 @@ else {
 
 # 2. Remove custom themes
 Write-Host ""
-Write-Host "[2/5] Custom Themes" -ForegroundColor Yellow
+Write-Host "[2/7] Custom Themes" -ForegroundColor Yellow
 $ompThemesPath = "$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes"
 $homeThemePath = "$env:USERPROFILE\nordcustom.omp.json"
 
@@ -248,7 +263,7 @@ else {
 
 # 3. Uninstall Oh My Posh
 Write-Host ""
-Write-Host "[3/5]  Oh My Posh" -ForegroundColor Yellow
+Write-Host "[3/7]  Oh My Posh" -ForegroundColor Yellow
 $omp = Get-Command oh-my-posh -ErrorAction SilentlyContinue
 if ($omp) {
     Write-Host "   Oh My Posh is currently installed" -ForegroundColor White
@@ -268,7 +283,7 @@ else {
 
 # 4. Uninstall Fastfetch
 Write-Host ""
-Write-Host "[4/5]  Fastfetch" -ForegroundColor Yellow
+Write-Host "[4/7]  Fastfetch" -ForegroundColor Yellow
 $fastfetch = Get-Command fastfetch -ErrorAction SilentlyContinue
 if ($fastfetch) {
     Write-Host "   Fastfetch is currently installed" -ForegroundColor White
@@ -286,9 +301,64 @@ else {
     Write-Host "  Fastfetch is not installed" -ForegroundColor Gray
 }
 
-# 5. Remove Hack Nerd Font
+# 5. Uninstall ntop (process monitoring tool)
 Write-Host ""
-Write-Host "[5/5] Hack Nerd Font" -ForegroundColor Yellow
+Write-Host "[5/8]  ntop (Process Monitoring)" -ForegroundColor Yellow
+$ntop = Get-Command ntop -ErrorAction SilentlyContinue
+if ($ntop) {
+    Write-Host "   ntop is currently installed" -ForegroundColor White
+    if (Ask-Confirmation "  Uninstall ntop?") {
+        Write-Host "   Uninstalling ntop..." -ForegroundColor Blue
+        try {
+            winget uninstall ntop --accept-source-agreements | Out-Null
+            Write-Host "   ntop uninstalled" -ForegroundColor Green
+            $itemsRemoved++
+        }
+        catch {
+            Write-Host "   Failed to uninstall ntop via winget, trying alternative removal..." -ForegroundColor Yellow
+            Write-Host "   Please manually remove ntop if needed" -ForegroundColor Gray
+        }
+    }
+    else {
+        Write-Host "    Keeping ntop installed" -ForegroundColor Blue
+    }
+}
+else {
+    Write-Host "  ntop is not installed" -ForegroundColor Gray
+}
+
+# 6. Remove PSReadLine (reset to default)
+Write-Host ""
+Write-Host "[6/8] PSReadLine Module" -ForegroundColor Yellow
+
+# Check if custom PSReadLine is installed
+$psReadLineModule = Get-Module -ListAvailable PSReadLine | Where-Object { $_.ModuleBase -like "*CurrentUser*" }
+if ($psReadLineModule) {
+    Write-Host "   Custom PSReadLine module found (v$($psReadLineModule.Version))" -ForegroundColor White
+    if (Ask-Confirmation "   Remove custom PSReadLine module? (Windows default will remain)") {
+        Write-Host "   Removing custom PSReadLine module..." -ForegroundColor Blue
+        try {
+            # Remove custom installed PSReadLine
+            Uninstall-Module PSReadLine -Force -ErrorAction SilentlyContinue
+            Write-Host "   Custom PSReadLine module removed (Windows default PSReadLine will be used)" -ForegroundColor Green
+            $itemsRemoved++
+        }
+        catch {
+            Write-Host "   Warning: Could not remove PSReadLine module: $($_.Exception.Message)" -ForegroundColor Yellow
+            Write-Host "   This is usually not a problem - Windows will use the default version" -ForegroundColor Gray
+        }
+    }
+    else {
+        Write-Host "   Keeping custom PSReadLine module" -ForegroundColor Blue
+    }
+}
+else {
+    Write-Host "   No custom PSReadLine module found (using Windows default)" -ForegroundColor Gray
+}
+
+# 6. Remove Hack Nerd Font
+Write-Host ""
+Write-Host "[7/8] Hack Nerd Font" -ForegroundColor Yellow
 
 # Check for Hack fonts in user fonts registry
 $hackInstalled = Get-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts" -ErrorAction SilentlyContinue | 
@@ -340,6 +410,126 @@ else {
     }
 }
 
+# 7. Restore Windows Terminal settings
+Write-Host ""
+Write-Host "[8/8] Windows Terminal Settings" -ForegroundColor Yellow
+
+# Function to restore Windows Terminal settings
+function Restore-WindowsTerminalConfig {
+    try {
+        # Find Windows Terminal settings path
+        $terminalPackagePath = Get-ChildItem "$env:LOCALAPPDATA\Packages" -Directory | Where-Object { $_.Name -like "*WindowsTerminal*" } | Select-Object -First 1
+        
+        if (!$terminalPackagePath) {
+            return $false
+        }
+        
+        $settingsPath = "$($terminalPackagePath.FullName)\LocalState\settings.json"
+        
+        if (!(Test-Path $settingsPath)) {
+            return $false
+        }
+        
+        # Look for Nick Terminal Manager backup files
+        $backupFiles = Get-ChildItem "$($terminalPackagePath.FullName)\LocalState" -Filter "settings.nick-terminal-mgr-backup-*.json" -ErrorAction SilentlyContinue
+        
+        if ($backupFiles) {
+            # Use the most recent backup
+            $latestBackup = $backupFiles | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+            Write-Host "   Found Nick Terminal Manager backup: $($latestBackup.Name)" -ForegroundColor White
+            return @{
+                "HasBackup"  = $true
+                "BackupPath" = $latestBackup.FullName
+            }
+        }
+        else {
+            # Check if our settings are applied
+            $settingsContent = Get-Content $settingsPath -Raw -Encoding UTF8
+            $settings = $settingsContent | ConvertFrom-Json
+            
+            $hasCustomDefaults = $false
+            
+            if ($settings.profiles -and $settings.profiles.defaults) {
+                $defaults = $settings.profiles.defaults
+                if (($defaults.font -and $defaults.font.face -eq "Hack Nerd Font") -or 
+                    ($defaults.opacity) -or 
+                    ($defaults.useAcrylic -eq $true)) {
+                    $hasCustomDefaults = $true
+                }
+            }
+            
+            # Check for window settings
+            if (($settings.initialCols -eq 140) -or ($settings.initialRows -eq 45) -or ($settings.centerOnLaunch -eq $true)) {
+                $hasCustomDefaults = $true
+            }
+            
+            return @{
+                "HasBackup"         = $false
+                "HasCustomSettings" = $hasCustomDefaults
+            }
+        }
+    }
+    catch {
+        return $false
+    }
+}
+
+$terminalResult = Restore-WindowsTerminalConfig
+if ($terminalResult -and ($terminalResult.HasBackup -or $terminalResult.HasCustomSettings)) {
+    if ($terminalResult.HasBackup) {
+        Write-Host "   Found Nick Terminal Manager backup settings" -ForegroundColor White
+    }
+    else {
+        Write-Host "   Found custom Windows Terminal settings (font/transparency/window)" -ForegroundColor White
+    }
+    
+    if (Ask-Confirmation "   Restore Windows Terminal to previous settings?") {
+        Write-Host "   Restoring Windows Terminal settings..." -ForegroundColor Blue
+        
+        try {
+            # Find Windows Terminal settings path
+            $terminalPackagePath = Get-ChildItem "$env:LOCALAPPDATA\Packages" -Directory | Where-Object { $_.Name -like "*WindowsTerminal*" } | Select-Object -First 1
+            $settingsPath = "$($terminalPackagePath.FullName)\LocalState\settings.json"
+            
+            if ($terminalResult.HasBackup) {
+                # Restore from Nick Terminal Manager backup
+                Copy-Item $terminalResult.BackupPath $settingsPath -Force
+                Remove-Item $terminalResult.BackupPath -Force -ErrorAction SilentlyContinue
+                Write-Host "   Windows Terminal settings restored from Nick Terminal Manager backup" -ForegroundColor Green
+            }
+            else {
+                # No backup found - clear the LocalState folder to reset to defaults
+                Write-Host "   No backup found. Resetting Windows Terminal to defaults..." -ForegroundColor Blue
+                
+                try {
+                    $localStatePath = "$($terminalPackagePath.FullName)\LocalState"
+                    
+                    # Remove all files from LocalState folder
+                    Get-ChildItem $localStatePath -File | Remove-Item -Force -ErrorAction Continue
+                    
+                    Write-Host "   Windows Terminal reset to factory defaults" -ForegroundColor Green
+                    Write-Host "   New settings will be generated when you open Windows Terminal" -ForegroundColor Gray
+                }
+                catch {
+                    Write-Host "   Warning: Could not reset Windows Terminal completely: $($_.Exception.Message)" -ForegroundColor Yellow
+                    Write-Host "   You may need to manually delete: $localStatePath" -ForegroundColor Gray
+                }
+            }
+            
+            $itemsRemoved++
+        }
+        catch {
+            Write-Host "   Warning: Could not restore Windows Terminal settings: $($_.Exception.Message)" -ForegroundColor Yellow
+        }
+    }
+    else {
+        Write-Host "   Keeping Windows Terminal settings" -ForegroundColor Blue
+    }
+}
+else {
+    Write-Host "   No custom Windows Terminal settings found" -ForegroundColor Gray
+}
+
 # Summary
 Write-Host ""
 Write-Host " Revert process completed!" -ForegroundColor Green
@@ -353,4 +543,9 @@ if ($itemsRemoved -gt 0) {
 } 
 else {
     Write-Host "  No changes were made to your system." -ForegroundColor Blue
+}
+
+# Return to root directory if we're in Scripts folder
+if ((Get-Location).Path -like "*\Scripts") {
+    Set-Location ".."
 }

@@ -2,6 +2,41 @@
 # This profile provides a beautiful terminal experience with Oh My Posh themes and useful aliases
 # It safely checks for command availability before trying to use them
 
+# Configure PSReadLine for enhanced autocomplete and suggestions
+if (Get-Module -ListAvailable PSReadLine) {
+    Import-Module PSReadLine
+    
+    # Enhanced intellisense and autocomplete
+    Set-PSReadLineOption -PredictionSource History
+    Set-PSReadLineOption -PredictionViewStyle InlineView
+    Set-PSReadLineOption -EditMode Emacs
+    
+    # Enhanced key bindings
+    Set-PSReadLineKeyHandler -Key Tab -Function Complete
+    Set-PSReadLineKeyHandler -Key "Ctrl+d" -Function DeleteChar
+    Set-PSReadLineKeyHandler -Key "Ctrl+w" -Function BackwardDeleteWord
+    Set-PSReadLineKeyHandler -Key "Alt+d" -Function DeleteWord
+    Set-PSReadLineKeyHandler -Key "Ctrl+LeftArrow" -Function BackwardWord
+    Set-PSReadLineKeyHandler -Key "Ctrl+RightArrow" -Function ForwardWord
+    
+    # History navigation
+    Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+    Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+    
+    # Colors for suggestions
+    Set-PSReadLineOption -Colors @{
+        Command          = 'Yellow'
+        Parameter        = 'Green'
+        Operator         = 'Magenta'
+        Variable         = 'Green'
+        String           = 'Blue'
+        Number           = 'Blue'
+        Type             = 'Cyan'
+        Comment          = 'DarkCyan'
+        InlinePrediction = 'DarkGray'
+    }
+}
+
 # Initialize Oh My Posh if available
 if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
     if (Test-Path "$HOME\nordcustom.omp.json") {

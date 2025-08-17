@@ -39,6 +39,11 @@ Write-Host "    |                                            POWERSHELL MANAGER 
 Write-Host "    |                                      Setup | Fix | Remove | Manage                               |" -ForegroundColor White
 Write-Host "    ====================================================================================================" -ForegroundColor Cyan
 Write-Host ""
+Write-Host "    One-Line Installation: " -ForegroundColor Gray -NoNewline
+Write-Host "iwr -useb bit.ly/nick-powershell | iex" -ForegroundColor Yellow
+Write-Host "    Git Clone Method: " -ForegroundColor Gray -NoNewline  
+Write-Host "git clone https://github.com/Nick-Zoc/My-Terminal-Setup.git" -ForegroundColor Yellow
+Write-Host ""
 
 # Hacker-style initialization sequence with animated progress
 function Show-SmoothInitialization {
@@ -83,22 +88,22 @@ Show-SmoothInitialization
 Write-Host "    Choose your action:" -ForegroundColor White
 Write-Host ""
 Write-Host "    ----------------------------------------------------------------" -ForegroundColor DarkGray
-Write-Host "    |                                                              |" -ForegroundColor DarkGray
-Write-Host "    |  1. Install Terminal Setup (Full Installation)               |" -ForegroundColor Green
-Write-Host "    |     - Oh My Posh, Fastfetch, Hack Nerd Font                  |" -ForegroundColor Gray
-Write-Host "    |     - Custom Nord theme & PowerShell profile                 |" -ForegroundColor Gray
-Write-Host "    |     - Beautiful animated installation                        |" -ForegroundColor Gray
-Write-Host "    |                                                              |" -ForegroundColor DarkGray
-Write-Host "    |  2. Fix Profile Errors (Recommended for errors)              |" -ForegroundColor Yellow
-Write-Host "    |     - Fixes 'command not found' errors                       |" -ForegroundColor Gray
-Write-Host "    |     - Keeps all customizations intact                        |" -ForegroundColor Gray
-Write-Host "    |     - Quick and safe solution                                |" -ForegroundColor Gray
-Write-Host "    |                                                              |" -ForegroundColor DarkGray
-Write-Host "    |  3. Complete Removal (Nuclear option)                        |" -ForegroundColor Red
-Write-Host "    |     - Removes all terminal customizations                    |" -ForegroundColor Gray
-Write-Host "    |     - Uninstalls Oh My Posh, Fastfetch, etc.                 |" -ForegroundColor Gray
-Write-Host "    |     - Returns to default PowerShell                          |" -ForegroundColor Gray
-Write-Host "    |                                                              |" -ForegroundColor DarkGray
+Write-Host "    |                                                                 |" -ForegroundColor DarkGray
+Write-Host "    |  1. Install Terminal Setup (Full Installation)                  |" -ForegroundColor Green
+Write-Host "    |     - Oh My Posh, Fastfetch, PSReadLine, ntop, Windows Terminal |" -ForegroundColor Gray
+Write-Host "    |     - Custom Nord theme & PowerShell profile                    |" -ForegroundColor Gray
+Write-Host "    |     - Beautiful animated installation                           |" -ForegroundColor Gray
+Write-Host "    |                                                                 |" -ForegroundColor DarkGray
+Write-Host "    |  2. Fix Profile Errors (Recommended for errors)                 |" -ForegroundColor Yellow
+Write-Host "    |     - Fixes 'command not found' errors                          |" -ForegroundColor Gray
+Write-Host "    |     - Keeps all customizations intact                           |" -ForegroundColor Gray
+Write-Host "    |     - Quick and safe solution                                   |" -ForegroundColor Gray
+Write-Host "    |                                                                 |" -ForegroundColor DarkGray
+Write-Host "    |  3. Complete Removal (Nuclear option)                           |" -ForegroundColor Red
+Write-Host "    |     - Removes all terminal customizations                       |" -ForegroundColor Gray
+Write-Host "    |     - Uninstalls Oh My Posh, Fastfetch, PSReadLine, ntop, etc.  |" -ForegroundColor Gray
+Write-Host "    |     - Returns to default PowerShell                            |" -ForegroundColor Gray
+Write-Host "    |                                                                 |" -ForegroundColor DarkGray
 Write-Host "    ----------------------------------------------------------------" -ForegroundColor DarkGray
 Write-Host ""
 Write-Host "    =====================================================================" -ForegroundColor DarkGray
@@ -196,6 +201,11 @@ try {
                 Write-Host ""
                 Write-Host "    Please restart your terminal to see the changes." -ForegroundColor Yellow
                 Write-Host "    Your customizations are preserved - errors should be gone!" -ForegroundColor Gray
+                
+                # Return to root directory if we're in Scripts folder
+                if ((Get-Location).Path -like "*\Scripts") {
+                    Set-Location ".."
+                }
             }
             else {
                 Write-Host "    [ERROR] Could not find the fixed profile file." -ForegroundColor Red
