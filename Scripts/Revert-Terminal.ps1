@@ -1,4 +1,8 @@
-﻿# Clear screen for better presentation
+﻿# Enhanced PowerShell Revert Script - Complete Uninstallation
+# This script removes all components installed by the PowerShell Theme Manager
+# Includes theme removal, package uninstallation, and settings restoration
+
+# Clear screen for better presentation
 Clear-Host
 # Term# Cool Tech-Themed ASCII Art Header (Warning/Error Theme)
 Write-Host ""

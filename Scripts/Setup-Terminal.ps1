@@ -1,9 +1,6 @@
-﻿# Enhanced Powershell Setup Script - Automated Installation
+# Enhanced Powershell Setup Script - Automated Installation
 # This script installs and configures a beautiful PowerShell terminal setup
 # Includes Oh My Posh themes, Fastfetch, Nerd Fonts, and useful aliases
-
-# Ensure script runs from its directory
-Set-Location -Path $PSScriptRoot
 
 # Clear screen for better presentation
 Clear-Host

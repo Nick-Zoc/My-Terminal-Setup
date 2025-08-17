@@ -57,13 +57,22 @@
 - **Note**: Script automatically detects PowerShell version and adapts accordingly
 
 ### **Dependencies**
+
+- **Execution Policy to 'Remote Signed'** (See steps below, MANDATORY)
 - **Winget Package Manager** (Windows 10 1709+ / Windows 11)
 - **Internet Connection** (for initial component downloads)
 - **Administrator Privileges** (for system-wide font installation)
 
 ---
 
+
 ## 🚀 **Installation Methods**
+
+## ⚠️ Before any of it RUN this: ⚠️
+### Run this command in PowerShell as ADMINISTRATOR:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
 ### **Method 1: One-Line Installation** ⚡ (Recommended)
 ```powershell
@@ -171,6 +180,18 @@ Programming-focused font with 3,000+ icons and programming ligatures
 
 **Installation fails with permission errors**
 - Solution: Run PowerShell as Administrator
+
+## 🛡️ **Execution Policy Requirements**
+
+### **Common Issue: "Execution of scripts is disabled"**
+If you encounter execution policy errors, use one of these solutions:
+
+
+### **Solution :** 🔧
+Run this command in PowerShell as Administrator:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
 ### **Manual Removal**
 ```powershell
