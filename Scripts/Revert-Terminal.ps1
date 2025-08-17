@@ -181,9 +181,7 @@ $totalItems = 7
 
 # 1. Remove custom PowerShell profile
 Write-Host ""
-Write-Host "[1/7] PowerShell Profile" -ForegroundColor Yellow
-
-# Check for profile in multiple possible locations
+Write-Host "[1/8] PowerShell Profile" -ForegroundColor Yellow 
 $profileLocations = @(
     $PROFILE,
     "$env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1",
@@ -232,7 +230,7 @@ else {
 
 # 2. Remove custom themes
 Write-Host ""
-Write-Host "[2/7] Custom Themes" -ForegroundColor Yellow
+Write-Host "[2/8] Custom Themes" -ForegroundColor Yellow
 $ompThemesPath = "$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes"
 $homeThemePath = "$env:USERPROFILE\nordcustom.omp.json"
 
@@ -263,7 +261,7 @@ else {
 
 # 3. Uninstall Oh My Posh
 Write-Host ""
-Write-Host "[3/7]  Oh My Posh" -ForegroundColor Yellow
+Write-Host "[3/8]  Oh My Posh" -ForegroundColor Yellow
 $omp = Get-Command oh-my-posh -ErrorAction SilentlyContinue
 if ($omp) {
     Write-Host "   Oh My Posh is currently installed" -ForegroundColor White
@@ -283,7 +281,7 @@ else {
 
 # 4. Uninstall Fastfetch
 Write-Host ""
-Write-Host "[4/7]  Fastfetch" -ForegroundColor Yellow
+Write-Host "[4/8]  Fastfetch" -ForegroundColor Yellow
 $fastfetch = Get-Command fastfetch -ErrorAction SilentlyContinue
 if ($fastfetch) {
     Write-Host "   Fastfetch is currently installed" -ForegroundColor White
@@ -310,13 +308,20 @@ if ($ntop) {
     if (Ask-Confirmation "  Uninstall ntop?") {
         Write-Host "   Uninstalling ntop..." -ForegroundColor Blue
         try {
-            winget uninstall ntop --accept-source-agreements | Out-Null
+            winget uninstall gsass1.NTop --accept-source-agreements | Out-Null
             Write-Host "   ntop uninstalled" -ForegroundColor Green
             $itemsRemoved++
         }
         catch {
             Write-Host "   Failed to uninstall ntop via winget, trying alternative removal..." -ForegroundColor Yellow
-            Write-Host "   Please manually remove ntop if needed" -ForegroundColor Gray
+            try {
+                winget uninstall ntop --accept-source-agreements | Out-Null
+                Write-Host "   ntop uninstalled (alternative)" -ForegroundColor Green
+                $itemsRemoved++
+            }
+            catch {
+                Write-Host "   Please manually remove ntop if needed" -ForegroundColor Gray
+            }
         }
     }
     else {

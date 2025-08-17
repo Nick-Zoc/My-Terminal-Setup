@@ -17,19 +17,33 @@
 
 ## 📸 **Visual Preview**
 
-<!-- Screenshot: Main Terminal Interface showing Oh My Posh theme with Nord colors -->
+<!-- Main Screenshot -->
 ![Main Terminal Interface](https://github.com/user-attachments/assets/64d22454-9d84-4578-8651-c81aba94044a)
 *PowerShell terminal with Oh My Posh Nord theme, custom prompt, and enhanced features*
 
-<!-- Screenshot: Terminal Manager Interface showing all three options -->
-![Terminal Manager Interface](https://github.com/user-attachments/assets/998f5aa9-f439-4f74-9955-f1d386e52cde)
-*Terminal Manager main interface with setup, fix, and removal options*
-
-<!-- Screenshot: Installation Progress with Dynamic Status -->
-![Installation Progress](https://github.com/user-attachments/assets/c6ce0a53-85e7-4d49-9448-b1ffa1581e1e)
-*Dynamic installation progress with real-time status updates and color-coded messages*
+<!-- Side-by-side screenshots using HTML table -->
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/998f5aa9-f439-4f74-9955-f1d386e52cde" width="100%"/>
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/c6ce0a53-85e7-4d49-9448-b1ffa1581e1e" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <em>Terminal Manager main interface with setup, fix, and removal options</em>
+    </td>
+    <td align="center">
+      <em>Dynamic installation progress with real-time status updates and color-coded messages</em>
+    </td>
+  </tr>
+</table>
 
 ---
+
+
 
 ## 💻 **System Requirements**
 

@@ -286,14 +286,14 @@ Show-DynamicProgress $currentStep $totalSteps "Installing ntop" "Process monitor
 if (!(Get-Command ntop -ErrorAction SilentlyContinue)) {
     Update-ProgressStatus "WORKING" "Installing ntop via winget..."
     try {
-        winget install ntop -s winget -e --accept-package-agreements --accept-source-agreements | Out-Null
+        winget install gsass1.NTop -s winget -e --accept-package-agreements --accept-source-agreements | Out-Null
         Update-ProgressStatus "SUCCESS" "ntop installed successfully"
     }
     catch {
         Update-ProgressStatus "WARNING" "Failed to install ntop via winget, trying alternative..."
         try {
             # Try alternative package name
-            winget install "ntop.ntop" -s winget -e --accept-package-agreements --accept-source-agreements | Out-Null
+            winget install "ntop" -s winget -e --accept-package-agreements --accept-source-agreements | Out-Null
             Update-ProgressStatus "SUCCESS" "ntop installed successfully (alternative)"
         }
         catch {
