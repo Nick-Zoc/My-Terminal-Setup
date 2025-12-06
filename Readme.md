@@ -75,12 +75,12 @@
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-### **Method 1: One-Line Installation** ⚡ (Recommended)
+### **Method 1: One-Line Installation** ⚡ (Currently unstable)
 ```powershell
 iwr -useb "https://raw.githubusercontent.com/Nick-Zoc/My-Terminal-Setup/main/One-Line-Setups/install.ps1" | iex
 ```
 
-### **Method 2: Git Clone Installation** 🔄
+### **Method 2: Git Clone Installation** (Recomended) 🔄
 ```powershell
 git clone https://github.com/Nick-Zoc/My-Terminal-Setup.git
 cd My-Terminal-Setup
