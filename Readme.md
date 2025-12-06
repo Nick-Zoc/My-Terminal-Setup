@@ -68,6 +68,8 @@
 
 ## 🚀 **Installation Methods**
 
+## 🔴 Currently the Method 1 is not working, use the 'Git Clone' one: Method 2.
+
 ## ⚠️ Before any of it RUN this: ⚠️
 ### Run this command in PowerShell as ADMINISTRATOR:
 ```powershell
