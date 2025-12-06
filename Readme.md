@@ -70,8 +70,7 @@
 
 ## 🔴 Currently the Method 1 is not working, use the 'Git Clone' one: Method 2.
 
-## ⚠️ Before any of it RUN this: ⚠️
-### Run this command in PowerShell as ADMINISTRATOR:
+### FIRST Run this command in PowerShell as ADMINISTRATOR:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
