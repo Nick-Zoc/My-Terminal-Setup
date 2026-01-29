@@ -68,7 +68,7 @@
 
 ## 🚀 **Installation Methods**
 
-## 🔴 Currently the Method 1 is not working, use the 'Git Clone' one: Method 2.
+## 🔴 Currently the Method 1 is not working, use the 'Method 2: Git Clone'.
 
 ### FIRST Run this command in PowerShell as ADMINISTRATOR:
 ```powershell
@@ -113,17 +113,17 @@ Most features are designed for PowerShell 5.1. While the script may work in Powe
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  1. Install PowerShell Setup (Full Installation)           │
-│     - Oh My Posh, Fastfetch, ntop, PSReadLine, Hack Font   │
-│     - Nord theme & PowerShell profile                      │
+│  1. Install PowerShell Setup (Full Installation)            │
+│     - Oh My Posh, Fastfetch, ntop, PSReadLine, Hack Font    │
+│     - Nord theme & PowerShell profile                       │
 │                                                             │
-│  2. Fix Profile Errors (Quick Fix)                         │
-│     - Fixes 'command not found' errors                     │
-│     - Keeps customizations intact                          │
+│  2. Fix Profile Errors (Quick Fix)                          │
+│     - Fixes 'command not found' errors                      │
+│     - Keeps customizations intact                           │
 │                                                             │
 │  3. Complete Removal                                        │
-│     - Removes all customizations                           │
-│     - Returns to default PowerShell                        │
+│     - Removes all customizations                            │
+│     - Returns to default PowerShell                         │
 └─────────────────────────────────────────────────────────────┘
 ```
 
